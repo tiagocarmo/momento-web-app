@@ -1,6 +1,6 @@
 {
   "name": "momento",
-  "version": "1.0.0-rc.2-yml-deploy",
+  "version": "1.0.0-rc.3-yml-deploy",
   "private": true,
   "type": "module",
   "homepage": "https://tiagocarmo.github.io/momento-web-app",
