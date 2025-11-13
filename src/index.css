@@ -38,12 +38,12 @@
 
 body {
   color: hsl(var(--foreground));
-  
+
   /* Fundo de galáxia */
   background-color: hsl(var(--background)); /* Cor de fallback */
-  background-image: radial-gradient(ellipse at 70% 30%, 
-    hsl(var(--galaxy-center)), 
-    hsl(var(--galaxy-mid)) 40%, 
+  background-image: radial-gradient(ellipse at 70% 30%,
+    hsl(var(--galaxy-center)),
+    hsl(var(--galaxy-mid)) 40%,
     hsl(var(--background)) 100%
   );
   background-attachment: fixed;

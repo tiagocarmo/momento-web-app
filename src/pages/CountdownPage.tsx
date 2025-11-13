@@ -23,9 +23,9 @@ const CountdownPage = () => {
 
   if (!event) {
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-primary"></div>
-        </div>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-primary"></div>
+      </div>
     );
   }
 
@@ -40,19 +40,19 @@ const CountdownPage = () => {
 
   return (
     <div className={`relative min-h-screen w-full flex flex-col items-center justify-center p-4 overflow-hidden bg-gradient-to-br from-background ${themeGradients[theme]}`}>
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{backgroundSize: '4rem 4rem'}}></div>
-        <main className="z-10 flex flex-col items-center justify-center text-center w-full animate-fade-in">
-            <span className="text-7xl md:text-8xl mb-6">{event.emoji}</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-12 max-w-4xl">{event.title}</h1>
-            <CountdownDisplay timeLeft={timeLeft} fullscreen />
-        </main>
-        <Link
-            to="/"
-            className="z-10 absolute top-6 left-6 px-4 py-2 bg-secondary/50 backdrop-blur-sm border border-border rounded-full text-foreground hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
-            aria-label="Voltar para a página inicial"
-        >
-            &larr; Voltar
-        </Link>
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{ backgroundSize: '4rem 4rem' }}></div>
+      <main className="z-10 flex flex-col items-center justify-center text-center w-full animate-fade-in">
+        <span className="text-7xl md:text-8xl mb-6">{event.emoji}</span>
+        <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-12 max-w-4xl">{event.title}</h1>
+        <CountdownDisplay timeLeft={timeLeft} fullscreen />
+      </main>
+      <Link
+        to="/"
+        className="z-10 absolute top-6 left-6 px-4 py-2 bg-secondary/50 backdrop-blur-sm border border-border rounded-full text-foreground hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+        aria-label="Voltar para a página inicial"
+      >
+        &larr; Voltar
+      </Link>
     </div>
   );
 };

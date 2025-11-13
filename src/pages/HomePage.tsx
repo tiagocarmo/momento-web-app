@@ -5,11 +5,11 @@ import { CountdownCard } from '../components/CountdownCard';
 import { EmptyState } from '../components/EmptyState';
 
 const themeOptions: { key: ThemeKey; name: string; class: string }[] = [
-    { key: 'default', name: 'Padrão', class: 'bg-secondary border-border' },
-    { key: 'sky', name: 'Céu', class: 'bg-sky-500' },
-    { key: 'mint', name: 'Menta', class: 'bg-emerald-400' },
-    { key: 'rose', name: 'Rosa', class: 'bg-rose-400' },
-    { key: 'amber', name: 'Âmbar', class: 'bg-amber-400' },
+  { key: 'default', name: 'Padrão', class: 'bg-secondary border-border' },
+  { key: 'sky', name: 'Céu', class: 'bg-sky-500' },
+  { key: 'mint', name: 'Menta', class: 'bg-emerald-400' },
+  { key: 'rose', name: 'Rosa', class: 'bg-rose-400' },
+  { key: 'amber', name: 'Âmbar', class: 'bg-amber-400' },
 ];
 
 const emojiOptions = ['🚀', '🎉', '🎂', '✈️', '💼', '🎓', '🏆', '❤️', '🎁', '🏡', '🎮', '💡'];
@@ -27,7 +27,7 @@ const CountdownForm: React.FC<{ onSave: (event: Omit<CountdownEvent, 'id' | 'cre
       onSave({ title, emoji, targetDate, theme });
     }
   };
-  
+
   const today = new Date();
   today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
   const minDateTime = today.toISOString().slice(0, 16);
@@ -52,17 +52,17 @@ const CountdownForm: React.FC<{ onSave: (event: Omit<CountdownEvent, 'id' | 'cre
           <div>
             <label className="block text-sm font-medium text-muted-foreground mb-2">Emoji</label>
             <div className="grid grid-cols-6 gap-2">
-                {emojiOptions.map(option => (
-                    <button
-                        type="button"
-                        key={option}
-                        onClick={() => setEmoji(option)}
-                        className={`flex items-center justify-center text-2xl p-2 rounded-lg transition-all transform hover:scale-110 focus:outline-none ${emoji === option ? 'bg-primary ring-2 ring-primary' : 'bg-input hover:bg-accent'}`}
-                        aria-label={`Selecionar emoji ${option}`}
-                    >
-                        {option}
-                    </button>
-                ))}
+              {emojiOptions.map(option => (
+                <button
+                  type="button"
+                  key={option}
+                  onClick={() => setEmoji(option)}
+                  className={`flex items-center justify-center text-2xl p-2 rounded-lg transition-all transform hover:scale-110 focus:outline-none ${emoji === option ? 'bg-primary ring-2 ring-primary' : 'bg-input hover:bg-accent'}`}
+                  aria-label={`Selecionar emoji ${option}`}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
           </div>
           <div>
@@ -78,18 +78,18 @@ const CountdownForm: React.FC<{ onSave: (event: Omit<CountdownEvent, 'id' | 'cre
             />
           </div>
           <div>
-             <label className="block text-sm font-medium text-muted-foreground mb-2">Tema de Cor</label>
-             <div className="flex items-center space-x-3">
-                {themeOptions.map(option => (
-                    <button
-                        type="button"
-                        key={option.key}
-                        onClick={() => setTheme(option.key)}
-                        className={`w-8 h-8 rounded-full transition-transform transform hover:scale-110 focus:outline-none ${option.class} ${theme === option.key ? 'ring-2 ring-offset-2 ring-offset-background ring-primary' : ''}`}
-                        aria-label={`Selecionar tema ${option.name}`}
-                    />
-                ))}
-             </div>
+            <label className="block text-sm font-medium text-muted-foreground mb-2">Tema de Cor</label>
+            <div className="flex items-center space-x-3">
+              {themeOptions.map(option => (
+                <button
+                  type="button"
+                  key={option.key}
+                  onClick={() => setTheme(option.key)}
+                  className={`w-8 h-8 rounded-full transition-transform transform hover:scale-110 focus:outline-none ${option.class} ${theme === option.key ? 'ring-2 ring-offset-2 ring-offset-background ring-primary' : ''}`}
+                  aria-label={`Selecionar tema ${option.name}`}
+                />
+              ))}
+            </div>
           </div>
           <div className="flex justify-end space-x-4 pt-4">
             <button type="button" onClick={onCancel} className="px-4 py-2 rounded-md hover:bg-accent transition-colors">Cancelar</button>
@@ -112,7 +112,7 @@ const HomePage = () => {
       id: crypto.randomUUID(),
       createdAt: new Date().toISOString(),
     };
-    setEvents(prevEvents => [...prevEvents, newEvent].sort((a,b) => +new Date(a.targetDate) - +new Date(b.targetDate)));
+    setEvents(prevEvents => [...prevEvents, newEvent].sort((a, b) => +new Date(a.targetDate) - +new Date(b.targetDate)));
     setIsFormOpen(false);
   };
 
@@ -131,9 +131,9 @@ const HomePage = () => {
           </div>
         ) : (
           <div className="flex items-center justify-center h-full">
-             <div className="max-w-2xl w-full">
-                <EmptyState onAdd={() => setIsFormOpen(true)} />
-             </div>
+            <div className="max-w-2xl w-full">
+              <EmptyState onAdd={() => setIsFormOpen(true)} />
+            </div>
           </div>
         )}
       </main>
